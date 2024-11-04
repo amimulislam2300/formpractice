@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<body>
+    <form action="#" name="form">
+        Name: <br>
+        <input type="text" name="name"><br>
+        Email: <br>
+        <input type="text" name="email"><br>
+        Password: <br>
+        <input type="password" name="password"><br>
+        Address: <br>
+        <textarea name="address" id=""></textarea><br>
+        Course: <br>
+        <select name="course" id="">
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="JS">JS</option>
+        </select><br>
+        Educational Qualification: 
+        <input type="checkbox" name="eq" value="SSC">SSC
+        <input type="checkbox" name="eq" value="HSC">HSC
+        <input type="checkbox" name="eq" value="DIPLOMA">DIPLOMA <br>
+        Gender: 
+        <input type="radio" name="male" value="Male">Male
+        <input type="radio" name="male" value="Female">Female <br>
+        <input type="button" value="submit" onclick="my_f()">
+        <input type="button" value="reset">
+
+        
+
+
+    </form>
+
+    <script>
+        function my_f(){
+            doc =open('','', 'width=400px; height=400px;');
+            var name = document.form.name.value;
+            var email = document.form.email.value;
+            var password = document.form.password.value;
+            var address = document.form.address.value;
+            var course = document.form.course.value;
+            var eq = "";
+            var sex = "";
+
+            for(i=0; i<document.form.eq.length; i++){
+                if(document.form.eq[i].checked){
+                    eq += document.form.eq[i].value + " ";
+                }
+            }
+
+            for(i=0; i<document.form.male.length; i++){
+                if(document.form.male[i].checked){
+                    sex = document.form.male[i].value;
+                }
+            }
+
+            with(doc.document){
+                write("Name: "+ name + "<br>" );
+                write("Email: "+ email+ "<br>" );
+                write("Password: "+ password+ "<br>" );
+                write("Address: "+ address+ "<br>" );
+                write("Course: "+ course+ "<br>");
+                write("Educatonal Qualification: "+ eq+ "<br>");
+                write("Gender: "+ gender+ "<br>");
+                write(<button onclick="self.close()">Close me</button>)
+                write(<button onclick="self.close()">Close me</button>)
+        
+            }
+        }
+    </script>
+</body>
+</html>
